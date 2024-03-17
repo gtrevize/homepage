@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Contact Manager</title>
+
+        <!-- Include Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        
+        <!-- Include fontawesome -->
+        <script src="https://kit.fontawesome.com/3709c0a124.js" crossorigin="anonymous"></script>
+        
+        <!-- Include local JS and CSS -->
+        <link href="styles.css" rel="stylesheet">
+        <script src="assets/contactManager.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", startPage);
+
+            function startPage() {
+                loadCommonSections();
+            
+                cardsNode = document.getElementById("cntCards");
+                totalContactsNode = document.getElementById("txtTotalContacts");
+                // console.log('cardsNode', cardsNode);
+            
+                fetchContacts();
+                populateCards();
+            }            
+        </script>
+    </head>
+
+    <body>
+        <!-- Some snippets of HTML based on Bootstrap tutorial by https://www.youtube.com/@NetNinja and https://getbootstrap.com/docs/5.0/components
+            Typed entirely from scratch, and customized as needed. Not copied and pasted
+        -->
+
+        <!-- Templates -->
+
+        <!-- Card Row Template -->
+        <template id="tplCardRow">
+            <div class="row md-3 align-items-center justify-content-center">
+            </div>
+        </template>
+
+        <!-- Card Template -->
+        <template id="tplCard">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3 hover-shadow">
+                <div class="card border-0">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="card-img-top img-avatar" alt="avatar">                                        
+                        </div>
+                        <div class="col-8 ps-1">
+                            <div class="card-body text-left py-1">
+                                <div class="container">
+                                    <h5 class="card-title contact-name">John Smith</h5>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a class="contact-phone" href="tel:(547)555-1234">(547)555-1234</a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a class="contact-email" href="mailto:john.smith@example.com">john.smith@example.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Navigation Bar -->
+        <section id="sct-header">
+        </section>
+
+        <!-- Main Container -->
+        <section id="sct-main">
+            <div id="cntCards" class="container-lg mt-10">
+                <h2>Contacts: 
+                    <span id="txtTotalContacts">Loading...</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="sct-footer">
+        </section>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+#lnk-icons {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+a.nav-link.text-white:hover {
+    color: black;
+}
+
+#sct-main {
+    padding-top: 6.5em;
+}
+
+.card {
+    background-color: #A6A690;
+    font-size: medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+div h5 {
+    color: blue;
+    text-transform: capitalize;
+    font-size: 2em;
+}
+
+div h2 span {
+    color: blue;
+    font-size: 0.75em;
+}
+
+.img-avatar {
+    width: 8em;
+    height: 8em;
+}
+
+a.navbar-brand i {
+    font-size: 2.5em;
+}
+
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.15);
+}
+
+a.nav-link li:hover {
+    color: black!;
+}
+
+.card-body {
+    font-size: 1em;
+}

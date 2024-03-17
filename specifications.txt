@@ -1,0 +1,24 @@
+HTML tags:
+1. div
+2. span
+3. p
+4. nav
+5. footer
+6. h4
+7. section
+8. template
+9. link
+10. script
+
+CSS properties:
+1. width
+2. height
+3. color
+4. transform
+5. transition
+
+Javascript usage:
+Load data from URL, store it on local storage. Use HTML template to generate nodes.
+
+Bootstrap usage:
+Responsive containers, navigation bars, color themes, etc.
