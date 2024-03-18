@@ -23,16 +23,20 @@
             async function startPage() {
                 await loadCommonSections(EXTERNAL_HTML);
             
-                markLinkActive("lst-nav-search");
-                
+                markLinkActive("lst-nav-manage");
+
                 fetchData(LOCAL_STORAGE_KEY, DUMMY_DATA_URL)
                 .then((data) => { 
                     persons = data; 
+                    populateList("tbl-contacts", persons, FIELD_NAMES);
+                    updateTotalRows("txtTotalContacts", persons);
                 })
                 .catch((error) => { alert("Error loading data", error)})
 
-                document.getElementById("frm-contact").addEventListener("submit", onClickSearch);
-                document.getElementById("frm-contact").addEventListener("reset", onClickClearAll);
+                document.getElementById("frm-contact").addEventListener("submit", onClickAdd);
+                document.getElementById("frm-contact").addEventListener("reset", onClickClearForm);
+
+                document.getElementById("btn-form-submit").innerHTML = "Add";
             }            
         </script>
     </head>
@@ -53,23 +57,10 @@
         <!-- Main Container -->
         <section id="sct-main">
             <div id="cntCards" class="container-lg mt-10">
-                <div class="accordion" id="acr-filter">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="acr-filter-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acr-filter-detail" aria-expanded="true" aria-controls="acr-filter-detail">
-                                <i class="fas fa-filter me-2"></i>Filters:
-                            </button>
-                        </h2>
-                        <div id="acr-filter-detail" class="accordion-collapse collapse show" aria-labelledby="acr-filter-header" data-bs-parent="#acr-filter">
-                            <div class="accordion-body">
-                                <div class="row justify-content-certer">
-                                    <div class="col-lg-12">
-                                        <section id="sct-form">
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row justify-content-certer">
+                    <div class="col-lg-12">
+                        <section id="sct-form">
+                        </section>
                     </div>
                 </div>
             </div>

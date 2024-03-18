@@ -2,6 +2,7 @@
 
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Contact Manager</title>
 
         <!-- Include Bootstrap 5 -->
@@ -16,16 +17,19 @@
         <script src="assets/contactManager.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", startPage);
+            
+            async function startPage() {
+                await loadCommonSections(EXTERNAL_HTML);
 
-            function startPage() {
-                loadCommonSections();
-            
-                cardsNode = document.getElementById("cntCards");
-                totalContactsNode = document.getElementById("txtTotalContacts");
-                // console.log('cardsNode', cardsNode);
-            
-                fetchContacts();
-                populateCards();
+                markLinkActive("lst-nav-home");
+
+                fetchData(LOCAL_STORAGE_KEY, DUMMY_DATA_URL)
+                .then((data) => { 
+                    persons = data; 
+                    populateCards("cntCards", persons);
+                    updateTotalRows("txtTotalContacts", persons);
+                })
+                .catch((error) => { alert("Error loading data", error)})
             }            
         </script>
     </head>
@@ -78,9 +82,6 @@
         <!-- Main Container -->
         <section id="sct-main">
             <div id="cntCards" class="container-lg mt-10">
-                <h2>Contacts: 
-                    <span id="txtTotalContacts">Loading...</span>
-                </h2>
             </div>
         </section>
 

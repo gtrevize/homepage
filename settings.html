@@ -16,44 +16,37 @@
         <link href="styles.css" rel="stylesheet">
         <script src="assets/contactManager.js"></script>
         <script>
-            let tblContacts = null;
-
             document.addEventListener("DOMContentLoaded", startPage);
 
             async function startPage() {
                 await loadCommonSections(EXTERNAL_HTML);
-            
-                markLinkActive("lst-nav-list");
 
-                fetchData(LOCAL_STORAGE_KEY, DUMMY_DATA_URL)
-                    .then((data) => { 
-                        persons = data; 
-                        populateList("tbl-contacts", persons, FIELD_NAMES);
-                        updateTotalRows("txtTotalContacts", persons);
-                    })
-                    .catch((error) => { alert("Error loading data", error)})
+                markLinkActive("lst-nav-settings");
+                
+                document.getElementById("btn-reset").addEventListener("click", onClickReset);
             }            
         </script>
     </head>
 
     <body>
-        <!-- Templates -->
-
-        <!-- Table Row Template -->
-        <template id="tplCardRow">
-            <div class="row md-3 align-items-center justify-content-center">
-            </div>
-        </template>
-
         <!-- Navigation Bar -->
         <section id="sct-header">
         </section>
 
         <!-- Main Container -->
         <section id="sct-main">
-            <div id="cntCards" class="container-lg mt-10">
-                <section id="sct-table">
-                </section>
+            <div class="container-fluid justify-content-center align-content-center">
+                <h2 class="row py-5 px-5">
+                    <div class="col col-md-8">
+                        <span class="text-black">Delete local storage</span>
+                    </div>  
+                    <div class="col col-md-4">
+                        <button id="btn-reset" type="submit" class="bg-danger text-white border-0 p-2">
+                            <i class="fas fa-trash me-2"></i>
+                            <span class="text-white">Reset</span>
+                        </button>
+                    </div>
+                </h2>
             </div>
         </section>
 

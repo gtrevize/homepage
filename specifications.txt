@@ -18,7 +18,7 @@ CSS properties:
 5. transition
 
 Javascript usage:
-Load data from URL, store it on local storage. Use HTML template to generate nodes.
+Load data from URL, store it on local storage. Use HTML templates to generate nodes, manage localStorage.
 
 Bootstrap usage:
 Responsive containers, navigation bars, color themes, etc.

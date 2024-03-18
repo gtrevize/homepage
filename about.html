@@ -2,6 +2,7 @@
 
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Contact Manager</title>
 
         <!-- Include Bootstrap 5 -->
@@ -17,22 +18,15 @@
         <script>
             document.addEventListener("DOMContentLoaded", startPage);
 
-            function startPage() {
-                loadCommonSections();
+            async function startPage() {
+                await loadCommonSections(EXTERNAL_HTML);
 
+                markLinkActive("lst-nav-about");
             }            
         </script>
     </head>
 
     <body>
-        <!-- Templates -->
-
-        <!-- Table Row Template -->
-        <template id="tplCardRow">
-            <div class="row md-3 align-items-center justify-content-center">
-            </div>
-        </template>
-
         <!-- Navigation Bar -->
         <section id="sct-header">
         </section>
@@ -42,25 +36,45 @@
             <div class="container-fluid justify-content-center align-content-center">
                 <div class="row py-5 px-5">
                     <div class="col col-md-4">
-                        <i class="fas fa-address-book" style="font-size: 15em;"></i>
+                        <i class="about-icon fas fa-address-book"></i>
                     </div>
-                    <div class="col col-md-8">
-                        <h1 style="font-size: 8em;">Contact Manager</h1>
-                    </div>
-                </div>
-                <div class="row ms-2">
-                    <div class="col col-12">
-                        <div class="display-2 text-muted">Harvard CS50X: Problem Set 8 - Homepage</div>
+                    <div class="col col-md-8 text-start">
+                        <h1 class="about-text">Contact Manager</h1>
                     </div>
                 </div>
-                <div class="row px-5 py-4">
+                <div class="row ms-2 mb-2">
                     <div class="col col-12">
-                        <div class="display-3 text-primary">Dante Passalacqua</div>
+                        <h2 class="text-muted">Harvard CS50X: Problem Set 8 - Homepage</h2>
                     </div>
                 </div>
-                <div class="row px-5 py-4">
+                <div class="row ms-2 mb-3">
                     <div class="col col-12">
-                        <div class="display-5 text-muted">March, 2024</div>
+                        <h3 class="text-primary">Dante Passalacqua</h3>
+                    </div>
+                </div>
+                <div class="row ms-2 mb-3">
+                    <div class="col col-12">
+                        <h4 class="text-muted">March, 2024</h4>
+                    </div>
+                </div>
+                <div class="row ms-2 mb-3">
+                    <div class="col col-12">
+                        <h6 class="text-muted">Acknowledgements:</h6>
+                        <ul class="text-muted">
+                            <li>
+                                Bootstrap snippets based on <a href="https://www.youtube.com/@NetNinja" target="_blank">Net Ninja</a> and 
+                                <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blanks">Bootstrap 5 docs</a>
+                            </li>
+                            <li>
+                                Icons by <a href="https://fontawesome.com/" target="_blank">fontawesome</a>                                
+                            </li>
+                            <li>
+                                Media queries based <a href="https://kapeli.com/cheat_sheets/CSS_Device_Media_Queries.docset/Contents/Resources/Documents/index" target="_blank">Kapeli cheat sheets</a>
+                            </li>
+                            <li>
+                                Some CSS styling ans Javascript snippets base on <a href="https://stackoverflow.com/" target="_blank">stackoverflow</a> examples
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
